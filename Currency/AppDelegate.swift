@@ -2,9 +2,10 @@
 //  AppDelegate.swift
 //  Currency
 //
-//  Created by Robert O'Connor on 27/10/2017.
-//  Copyright © 2017 WIT. All rights reserved.
+//  Created by Robert O'Connor and John Ryan on 16/03/2018.
+//  Copyright © 2018 IrishTwitApps. All rights reserved.
 //
+
 
 import UIKit
 
