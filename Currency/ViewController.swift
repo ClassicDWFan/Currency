@@ -20,8 +20,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var convertValue:Double = 0
     
-    var doNotPressButton: UIButton!
-    
     //MARK Outlets
     //@IBOutlet weak var convertedLabel: UILabel!
     
@@ -54,10 +52,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var chfValueLabel: UILabel!
     @IBOutlet weak var chfFlagLabel: UILabel!
     
-    @IBAction func doNotPressButtonPressed(sender: UIButton) {
-        doNotPressButton.setTitle("Please Do Not Press This Button Again", for: UIControlState.normal)
-        
-    }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if baseTextField.isEditing{
@@ -138,7 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         doneToolbar.barStyle = UIBarStyle.default
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: Selector(("doneButtonAction")))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(self.doneButtonAction))
         
         var items = [UIBarButtonItem]()
         items.append(flexSpace)
@@ -151,7 +145,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func doneButtonAction()
+    @objc func doneButtonAction()
     {
         self.baseTextField.resignFirstResponder()
     }
